@@ -3,6 +3,7 @@
 
 {% block content %}
 
+{% if user.is_authenticated and user.is_staff and is_superuser %}
 {% include 'partials/topnav.html' %}
 
 
@@ -98,5 +99,9 @@
         </div>
     </div>
 </div>
+{% else %}
+{% include 'dashboard/staff_index.html' %}
+
+{% endif %}
 <!--End Graphs-->
 {% endblock  %}
