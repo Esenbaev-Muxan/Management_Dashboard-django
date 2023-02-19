@@ -21,6 +21,8 @@ def index(request):
          instance.staff = request.user 
          instance.save()
          return redirect('dashboard-index')
+      
+      
    else:
       form = OrderForm()
    context = {
